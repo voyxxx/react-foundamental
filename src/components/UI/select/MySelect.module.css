@@ -1,0 +1,73 @@
+.selectHolder {
+  position: relative;
+  width: 300px;
+  height: 30px;
+  margin: 15px 0;
+}
+
+.select {
+  display: none;
+}
+
+.fakeSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 2px solid #7e7e7e;
+  cursor: pointer;
+  list-style: none;
+  background-color: #fff;
+}
+
+.fakeSelect:after {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: block;
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid darkred;
+  border-right: 2px solid darkred;
+  transform-origin: bottom;
+  transform: translateY(-100%) scaleX(.8) rotate(45deg);
+  transition: transform 0.3s;
+}
+
+.fakeSelectIsOpen {
+  height: auto;
+  max-height: 124px;
+  overflow: auto;
+}
+
+.fakeSelectIsOpen:after {
+  transform: translateY(-100%) scale(.8, -1) rotate(45deg);
+}
+
+.fakeOption {
+  height: 30px;
+  padding: 5px 10px;
+  background-color: #fff;
+  outline: none;
+}
+
+.fakeOption:nth-of-type(n+3) {
+  background-color: #a4e5e5;
+  background: linear-gradient(0deg, #a4e5e5 0%, #fff 20%, #fff 80%, #a4e5e5 100%);
+}
+
+.fakeOption:nth-of-type(2) {
+  background-color: #bebebe;
+  color: rgba(0, 0, 0, 0.6);
+  cursor: default;
+}
+
+.fakeOption:focus {
+  background: linear-gradient(0deg, RGBA(120,220,220,.7) 0%, #fff 50%, RGBA(120,220,220,.7) 100%);
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
